@@ -117,6 +117,82 @@
         };
     };
 
+    macros {
+        clip_history: clip_history {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "CLIP_HISTORY";
+        };
+
+        vs_left_editor: vs_left_editor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "VS_LEFT_EDITOR";
+        };
+
+        vs_right_editor: vs_right_editor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "VS_RIGHT_EDITOR";
+        };
+
+        vs_fold: vs_fold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LEFT_BRACKET>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
+
+            label = "VS_FOLD";
+        };
+
+        vs_unfold: vs_unfold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp RIGHT_BRACKET>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
+
+            label = "VS_UNFOLD";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -135,7 +211,7 @@
 &kp TAB           &kp Q   &kp W           &kp E                     &kp R               &kp T                                &kp Y          &kp U                &kp I                      &kp O            &kp P     &kp NON_US_BACKSLASH
 &kp LEFT_SHIFT    &kp A   &hm LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm LEFT_CONTROL F  &kp G                                &kp H          &hm RIGHT_CONTROL J  &hm_shift_r RIGHT_SHIFT K  &hm RIGHT_ALT L  &kp SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z   &kp X           &kp C                     &kp V               &kp B   &kp LBKT       &kp RBKT      &kp N          &kp M                &kp COMMA                  &kp DOT          &kp FSLH  &kp RSHFT
-                                          &kp LALT                  &kp LGUI            &mo 1   &lt 1 SPACE    &lt 2 RETURN  &kp BACKSPACE  &kp RIGHT_ALT        &kp RGUI
+                                          &kp LALT                  &kp LGUI            &mo 4   &lt 1 SPACE    &lt 2 RETURN  &kp BACKSPACE  &kp RIGHT_ALT        &kp RGUI
             >;
         };
 
@@ -180,11 +256,11 @@
 
         HOTKY {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans                                           &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans                                           &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans                                           &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &vs_fold  &vs_unfold  &vs_left_editor    &vs_right_editor  &trans         &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans    &trans      &trans             &trans            &clip_history  &trans  &trans
             >;
         };
     };
