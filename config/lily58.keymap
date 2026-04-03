@@ -120,6 +120,11 @@
             bindings = <&bt BT_CLR>;
             key-positions = <50 51 52 53 54 55 56 57>;
         };
+
+        game_mode {
+            bindings = <&to 5>;
+            key-positions = <53 54 49 36 50 57>;
+        };
     };
 
     macros {
@@ -273,6 +278,16 @@
             >;
 
             label = "HOTKY";
+        };
+
+        layer_5 {
+            bindings = <
+&kp N1     &kp N2  &kp N3  &kp N4   &kp N5  &kp N6                         &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB    &kp Q   &kp W   &kp E    &kp R   &kp T                          &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp A   &kp S   &kp D    &kp F   &kp G                          &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp Z   &kp X   &kp C    &kp V   &kp B     &trans       &to 0   &trans  &trans  &trans  &trans  &trans  &trans
+                           &kp ESC  &none   &kp RBKT  &kp SPACE    &trans  &trans  &trans  &trans
+            >;
         };
     };
 
