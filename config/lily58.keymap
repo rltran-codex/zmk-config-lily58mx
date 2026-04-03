@@ -115,6 +115,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <11 23>;
         };
+
+        bth_clear {
+            bindings = <&bt BT_CLR>;
+            key-positions = <50 51 52 53 54 55 56 57>;
+        };
     };
 
     macros {
