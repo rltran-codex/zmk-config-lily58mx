@@ -120,11 +120,6 @@
             bindings = <&bt BT_CLR>;
             key-positions = <50 51 52 53 54 55 56 57>;
         };
-
-        game_mode {
-            bindings = <&to 5>;
-            key-positions = <53 54 49 36 50 57>;
-        };
     };
 
     macros {
@@ -201,6 +196,20 @@
 
             label = "VS_UNFOLD";
         };
+
+        snippet_tool: snippet_tool {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LEFT_WIN &kp LEFT_SHIFT>;
+
+            label = "SNIPPET_TOOL";
+        };
     };
 
     keymap {
@@ -236,11 +245,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans  &trans       &trans    &trans         &trans                     &none    &kp N7                      &kp N8                            &kp N9                  &none   &trans
-&trans  &trans  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &trans                     &none    &kp N4                      &kp N5                            &kp N6                  &none   &trans
-&trans  &trans  &kp LEFT     &kp DOWN  &kp RIGHT      &trans                     &none    &hm RIGHT_CONTROL NUMBER_1  &hm_shift_r RIGHT_SHIFT NUMBER_2  &hm RIGHT_ALT NUMBER_3  &none   &trans
-&trans  &trans  &trans       &trans    &kp HOME       &kp END  &trans    &trans  &trans   &none                       &kp N0                            &none                   &trans  &trans
-                             &trans    &trans         &trans   &trans    &trans  &kp DEL  &trans                      &trans
+&trans  &trans  &trans       &trans    &trans         &trans                     &none   &kp N7                      &kp N8                            &kp N9                  &none   &trans
+&trans  &trans  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &trans                     &none   &kp N4                      &kp N5                            &kp N6                  &none   &trans
+&trans  &trans  &kp LEFT     &kp DOWN  &kp RIGHT      &trans                     &none   &hm RIGHT_CONTROL NUMBER_1  &hm_shift_r RIGHT_SHIFT NUMBER_2  &hm RIGHT_ALT NUMBER_3  &none   &trans
+&trans  &trans  &trans       &trans    &kp HOME       &kp END  &trans    &trans  &trans  &none                       &kp N0                            &none                   &trans  &trans
+                             &trans    &trans         &trans   &trans    &trans  &trans  &kp DEL                     &trans
             >;
         };
 
@@ -258,11 +267,11 @@
 
         system {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                            &studio_unlock  &trans           &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans             &trans                                  &trans          &trans           &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &kp C_VOLUME_DOWN  &trans                                  &trans          &kp C_VOLUME_UP  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans             &trans        &bt BT_PRV    &bt BT_NXT  &trans          &trans           &trans  &trans  &trans  &trans
-                                    &trans        &trans             &trans        &trans        &trans      &trans          &trans           &trans
+&trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                            &studio_unlock  &trans           &trans  &trans  &trans  &trans
+&kp CLCK  &trans        &trans        &trans        &trans             &trans                                  &trans          &trans           &trans  &trans  &trans  &trans
+&trans    &trans        &trans        &trans        &kp C_VOLUME_DOWN  &trans                                  &trans          &kp C_VOLUME_UP  &trans  &trans  &trans  &trans
+&trans    &trans        &trans        &trans        &trans             &trans        &bt BT_PRV    &bt BT_NXT  &trans          &kp K_MUTE       &trans  &trans  &trans  &trans
+                                      &trans        &trans             &trans        &trans        &trans      &trans          &trans           &trans
             >;
 
             label = "SYS";
@@ -270,26 +279,14 @@
 
         hot_key {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans                                           &trans         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans                                           &trans         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans                                           &trans         &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &vs_fold  &vs_unfold  &vs_left_editor    &vs_right_editor  &trans         &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans      &trans             &trans            &clip_history  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                           &trans         &trans  &trans  &trans  &trans  &snippet_tool
+&trans  &trans  &trans  &trans  &trans  &vs_fold                                         &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &vs_unfold                                       &trans         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &vs_left_editor    &vs_right_editor  &trans         &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans      &trans             &trans            &clip_history  &trans  &trans
             >;
 
             label = "HOTKY";
-        };
-
-        GAME {
-            bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3   &kp N4  &kp N5                            &trans  &trans  &trans  &trans  &trans  &trans
-&none      &kp Q   &kp W   &kp E    &kp R   &kp T                             &trans  &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &kp A   &kp S   &kp D    &kp F   &kp G                             &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &kp Z   &kp X   &kp C    &kp V   &kp B   &kp SPACE         &to 0   &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp ESC  &kp U   &kp V   &kp LEFT_SHIFT    &trans  &trans  &trans  &trans
-            >;
-
-            label = "GMR";
         };
     };
 
