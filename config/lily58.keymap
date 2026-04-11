@@ -61,61 +61,6 @@
             key-positions = <42 43 53 54>;
         };
 
-        c1 {
-            bindings = <&kp EXCLAMATION>;
-            key-positions = <1 13>;
-        };
-
-        c2 {
-            bindings = <&kp AT_SIGN>;
-            key-positions = <2 14>;
-        };
-
-        c3 {
-            bindings = <&kp POUND>;
-            key-positions = <3 15>;
-        };
-
-        c4 {
-            bindings = <&kp DOLLAR>;
-            key-positions = <4 16>;
-        };
-
-        c5 {
-            bindings = <&kp PERCENT>;
-            key-positions = <17 5>;
-        };
-
-        c6 {
-            bindings = <&kp CARET>;
-            key-positions = <6 18>;
-        };
-
-        c7 {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <7 19>;
-        };
-
-        c8 {
-            bindings = <&kp ASTERISK>;
-            key-positions = <8 20>;
-        };
-
-        c9 {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <9 21>;
-        };
-
-        c10 {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <10 22>;
-        };
-
-        c11 {
-            bindings = <&kp EQUAL>;
-            key-positions = <11 23>;
-        };
-
         bth_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <50 51 52 53 54 55 56 57>;
@@ -227,10 +172,10 @@
 
             bindings = <
 &kp ESC           &kp N1  &kp N2          &kp N3                    &kp N4              &kp N5                               &kp N6         &kp N7               &kp N8                     &kp N9           &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W           &kp E                     &kp R               &kp T                                &kp Y          &kp U                &kp I                      &kp O            &kp P     &kp NON_US_BACKSLASH
-&kp LEFT_SHIFT    &kp A   &hm LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm LEFT_CONTROL F  &kp G                                &kp H          &hm RIGHT_CONTROL J  &hm_shift_r RIGHT_SHIFT K  &hm RIGHT_ALT L  &kp SEMI  &kp SQT
+&kp CAPS          &kp Q   &kp W           &kp E                     &kp R               &kp T                                &kp Y          &kp U                &kp I                      &kp O            &kp P     &kp NON_US_BACKSLASH
+&kp TAB           &kp A   &hm LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm LEFT_CONTROL F  &kp G                                &kp H          &hm RIGHT_CONTROL J  &hm_shift_r RIGHT_SHIFT K  &hm RIGHT_ALT L  &kp SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z   &kp X           &kp C                     &kp V               &kp B   &kp LBKT       &kp RBKT      &kp N          &kp M                &kp COMMA                  &kp DOT          &kp FSLH  &kp RSHFT
-                                          &kp LALT                  &kp LGUI            &tog 4  &lt 1 SPACE    &lt 2 RETURN  &kp BACKSPACE  &kp RIGHT_ALT        &kp RGUI
+                                          &kp LALT                  &kp LGUI            &mo 4   &lt 1 SPACE    &lt 2 RETURN  &kp BACKSPACE  &kp RIGHT_ALT        &kp RGUI
             >;
         };
 
@@ -255,11 +200,11 @@
 
         symbol {
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans     &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none    &kp F12
-&trans     &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans   &trans
-&trans     &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans   &trans
-                           &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3          &kp F4                &kp F5                                   &kp F6             &kp F7                 &kp F8            &kp F9  &kp F10  &kp F11
+&trans     &none   &none   &none           &kp LEFT_PARENTHESIS  &none                                    &none              &kp RIGHT_PARENTHESIS  &none             &none   &none    &kp F12
+&trans     &trans  &trans  &kp LEFT_BRACE  &kp UNDER             &kp LEFT_BRACKET                         &kp RIGHT_BRACKET  &kp COLON              &kp RIGHT_BRACE   &trans  &trans   &trans
+&trans     &trans  &trans  &kp LESS_THAN   &kp KP_COMMA          &trans            &kp MINUS    &kp PLUS  &trans             &kp KP_EQUAL           &kp GREATER_THAN  &trans  &trans   &trans
+                           &trans          &trans                &trans            &trans       &trans    &trans             &trans                 &trans
             >;
 
             label = "SYM";
@@ -267,7 +212,7 @@
 
         system {
             bindings = <
-&trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                            &studio_unlock  &trans           &trans  &trans  &trans  &trans
+&trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                            &studio_unlock  &trans           &trans  &trans  &trans  &to 5
 &kp CLCK  &trans        &trans        &trans        &trans             &trans                                  &trans          &trans           &trans  &trans  &trans  &trans
 &trans    &trans        &trans        &trans        &kp C_VOLUME_DOWN  &trans                                  &trans          &kp C_VOLUME_UP  &trans  &trans  &trans  &trans
 &trans    &trans        &trans        &trans        &trans             &trans        &bt BT_PRV    &bt BT_NXT  &trans          &kp K_MUTE       &trans  &trans  &trans  &trans
@@ -287,6 +232,18 @@
             >;
 
             label = "HOTKY";
+        };
+
+        game {
+            bindings = <
+&kp M      &kp N1     &kp N2  &kp N3   &kp N4  &kp N5                       &trans  &trans  &trans  &trans  &trans  &to 0
+&kp TAB    &none      &kp Q   &kp W    &kp E   &kp R                        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &none      &kp A   &kp S    &kp D   &kp F                        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp LSHFT  &kp Z   &kp X    &kp C   &kp V   &kp G        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                              &kp ESC  &trans  &kp T   &kp SPACE    &trans  &trans  &trans  &trans
+            >;
+
+            label = "GMR";
         };
     };
 
