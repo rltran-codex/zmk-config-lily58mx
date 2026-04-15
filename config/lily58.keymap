@@ -200,11 +200,11 @@
 
         symbol {
             bindings = <
-&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH        &kp DOLLAR  &kp PERCENT                      &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS
-&kp TILDE  &none            &none        &trans          &none       &none                            &none      &none          &trans        &none                 &none                  &trans
-&trans     &trans           &trans       &kp UNDERSCORE  &trans      &kp MINUS                        &kp PLUS   &trans         &kp COLON     &trans                &trans                 &trans
-&trans     &trans           &trans       &kp COMMA       &trans      &trans         &trans    &trans  &trans     &trans         &kp EQUAL     &trans                &trans                 &trans
-                                         &trans          &trans      &kp BACKSPACE  &trans    &trans  &trans     &trans         &trans
+&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH                      &kp DOLLAR  &kp PERCENT                                       &kp CARET  &kp AMPERSAND  &kp ASTERISK                   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS
+&kp TILDE  &none            &none        &trans                        &none       &none                                             &none      &none          &trans                         &none                 &none                  &trans
+&trans     &trans           &trans       &hm_shift_l LEFT_SHIFT UNDER  &trans      &kp MINUS                                         &kp PLUS   &trans         &hm_shift_r RIGHT_SHIFT COLON  &trans                &trans                 &trans
+&trans     &trans           &trans       &kp COMMA                     &trans      &trans         &kp LEFT_BRACE    &kp RIGHT_BRACE  &trans     &trans         &kp EQUAL                      &trans                &trans                 &trans
+                                         &trans                        &trans      &kp BACKSPACE  &trans            &trans           &trans     &trans         &trans
             >;
 
             label = "SYM";
