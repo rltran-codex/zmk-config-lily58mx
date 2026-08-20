@@ -165,6 +165,20 @@
 
             label = "SNIPPET_TOOL";
         };
+
+        open_terminal: open_terminal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN &kp X>,
+                <&macro_release>,
+                <&kp LEFT_WIN &kp X>,
+                <&macro_tap>,
+                <&kp I>;
+
+            label = "OPEN_TERMINAL";
+        };
     };
 
     keymap {
