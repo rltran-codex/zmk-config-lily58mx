@@ -75,6 +75,13 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <46 47>;
         };
+
+        game_mode {
+            bindings = <&to 5>;
+            key-positions = <11 23 35 49>;
+            timeout-ms = <0>;
+            layers = <5>;
+        };
     };
 
     macros {
@@ -260,7 +267,7 @@
 
         game {
             bindings = <
-&none      &none      &kp N1  &kp N2   &kp N3  &kp N4                         &trans  &trans  &trans  &trans  &trans  &trans
+&none      &none      &kp N1  &kp N2   &kp N3  &kp N4                         &trans  &trans  &trans  &trans  &trans  &to 0
 &kp M      &kp TAB    &kp Q   &kp W    &kp E   &kp R                          &trans  &trans  &trans  &trans  &trans  &trans
 &kp LSHFT  &kp LSHFT  &kp A   &kp S    &kp D   &kp F                          &trans  &trans  &trans  &trans  &trans  &trans
 &kp LCTRL  &kp LCTRL  &kp Z   &kp X    &kp C   &kp V     &kp G        &trans  &trans  &trans  &trans  &trans  &trans  &trans
