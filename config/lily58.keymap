@@ -78,7 +78,7 @@
 
         game_mode {
             bindings = <&to 5>;
-            key-positions = <11 23 35 49>;
+            key-positions = <11 49 36 0>;
             timeout-ms = <0>;
             layers = <5>;
         };
